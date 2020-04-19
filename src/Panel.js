@@ -4,56 +4,52 @@ import structure from './meta.json';
 
 console.log(structure);
 
-const Leaf = ({ item }) => {
+const Leaf = ({ item }) => { 
     return (
-        <label className="leaf-label">
-            item.title
+        <label className="leaf-label"  >
+            {item.title}
             <input className="leaf-input" type="text" />
         </label>
     );
-};
+}; 
 
 const Tree = ({ children }) => {
 
     if (!children || !Array.isArray(children)) return null;
-    const isRow = children.find(item => item.type = "panel");
 
-
-    return isRow ? (
-        <Row>
-            {children.map((item) => {
+    return (
+        <>
+            {children.map((item) => {  
                 const width = +item.width;
                 const type = item.type;
-                return (
-                    <Col key={item.id} xs={width} >
-                        {
-                            type === 'item' ?
-                                <Leaf item={item} />
-                                : <Tree children={item.children} />
-                        }
-                    </Col>
+                return ( 
+                            type === 'row' ? (
+                                <Row key={item.id} xs={width} sm={width} md={width} lg={width}>
+                                    <Tree children={item.children} />
+                                </Row>
+                            ) :
+                                type === 'col'
+                                    ? (
+                                        <Col key={item.id} xs={width} sm={width} md={width} lg={width}>
+                                            <Tree children={item.children} />
+                                        </Col>
+                                    )
+                                    : <Leaf key={item.id} item={item} />
+                        
                 )
             })}
-        </Row>
-    ) :
-        (
-            <>
-                {children.map((item) => {
-                    const width = +item.width;
-                    return (
-                        <Col key={item.id} xs={width} >
-                            <Leaf item={item} />
-                        </Col>
-                    )
-                })}
-            </>
-        )
-}
+        </>
+    )
+};
+
+
 export const Panel = () => {
 
     return (
-        <Grid fluid> 
-                <Tree children={structure.children} /> 
+        <Grid fluid>
+            <Row>
+                <Tree children={structure.children} />
+            </Row>
         </Grid>
     )
 }

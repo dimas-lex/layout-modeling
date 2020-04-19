@@ -1,44 +1,59 @@
 {
-    "type": "panel",
+    "type": "row",
     "width": "12",
     "children": [
         {
-            "type": "panel",
-            "id": "111",
+            "type": "col",
+            "id": "11",
             "title": "panle 1",
             "width": "9",
             "children": [
                 {
-                    "type": "panel",
-                    "id": "111_1",
-                    "title": "panle 111_1",
-                    "width": "9",
+                    "type": "row",
+                    "id": "111",
+                    "title": "panle 111",
+                    "width": "12",
                     "children": [
                         {
-                            "type": "item",
-                            "id": "111_1_1",
+                            "type": "col",
+                            "id": "111_1",
                             "width": "6",
-                            "title": "panle 111_1_1"
+                            "title": "panle 111_1",
+                            "children": [
+                                {
+                                    "type": "item",
+                                    "id": "111_1_1",
+                                    "width": "6",
+                                    "title": "panle 111_1_1"
+                                },
+                                {
+                                    "type": "item",
+                                    "id": "111_1_1",
+                                    "width": "6",
+                                    "title": "panle 111_1_1"
+                                }
+                            ]
                         },
                         {
-                            "type": "item",
-                            "id": "111_1_2",
+                            "type": "col",
+                            "id": "111_2",
                             "width": "6",
-                            "title": "panle 111_1_2"
+                            "title": "panle 111_2",
+                            "children": [
+                                {
+                                    "type": "item",
+                                    "id": "111_2_1",
+                                    "width": "6",
+                                    "title": "panle 111_2_1"
+                                }
+                            ]
                         }
                     ]
-                },
-                {
-                    "type": "panel",
-                    "id": "111_2",
-                    "width": "3",
-                    "title": "panle 111_2",
-                    "children": []
                 }
             ]
         },
         {
-            "type": "panel",
+            "type": "col",
             "id": "222",
             "width": "3",
             "title": "panle 2",

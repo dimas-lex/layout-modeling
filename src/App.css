@@ -1,38 +1,34 @@
-.App {
-  text-align: center;
-  width: 100%;
-}
-
- 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
- 
-div {
-  border: 1px solid red; 
-  padding: 3px;
+* {
   box-sizing: border-box;
 }
-.row {
-  border: 1px solid blue;
+
+div { 
+  padding: 0 !important; 
+  box-sizing: border-box;
 }
+
+.row {
+  border: 0px solid red;
+}
+
+.col-md, .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12, .col-md-offset-0, .col-md-offset-1, .col-md-offset-2, .col-md-offset-3, .col-md-offset-4, .col-md-offset-5, .col-md-offset-6, .col-md-offset-7, .col-md-offset-8, .col-md-offset-9, .col-md-offset-10, .col-md-offset-11, .col-md-offset-12 {
+  border: 0px solid blue;
+}
+
 .leaf-label {
   display: block;
   width: 100%;
-  height: 25px;
+  height: 50px;
   margin: 0;
-  padding: 3px 0;
+  padding: 0px 3px;
   box-sizing: border-box;
 }
+
 .leaf-input {
   width: 100%; 
   margin: 0; 
+  padding: 0;
   box-sizing: border-box;
+  display: block;
+  height: 25px;
 }
