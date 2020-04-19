@@ -1,23 +1,59 @@
 import React from 'react';
-import { Responsive, WidthProvider } from 'react-grid-layout';
+import { Grid, Row, Col } from 'react-flexbox-grid';
+import structure from './meta.json';
 
-const ResponsiveGridLayout = WidthProvider(Responsive);
+console.log(structure);
 
-export class Panel extends React.Component {
-    render() {
-        const layouts = [
-            { i: 'a', x: 0, y: 0, w: 1, h: 2, static: true },
-            { i: 'b', x: 1, y: 0, w: 3, h: 2, minW: 2, maxW: 4 },
-            { i: 'c', x: 4, y: 0, w: 1, h: 2 }
-        ];
-        return (
-            <ResponsiveGridLayout className="layout" layouts={layouts}
-                breakpoints={{ lg: 1200, md: 996, sm: 768, xs: 480, xxs: 0 }}
-                cols={{ lg: 12, md: 12, sm: 12, xs: 12, xxs: 12 }}>
-                <div key="1" className="box">1</div>
-                <div key="2" className="box">2</div>
-                <div key="3" className="box">3</div>
-            </ResponsiveGridLayout>
+const Leaf = ({ item }) => {
+    return (
+        <label className="leaf-label">
+            item.title
+            <input className="leaf-input" type="text" />
+        </label>
+    );
+};
+
+const Tree = ({ children }) => {
+
+    if (!children || !Array.isArray(children)) return null;
+    const isRow = children.find(item => item.type = "panel");
+
+
+    return isRow ? (
+        <Row>
+            {children.map((item) => {
+                const width = +item.width;
+                const type = item.type;
+                return (
+                    <Col key={item.id} xs={width} >
+                        {
+                            type === 'item' ?
+                                <Leaf item={item} />
+                                : <Tree children={item.children} />
+                        }
+                    </Col>
+                )
+            })}
+        </Row>
+    ) :
+        (
+            <>
+                {children.map((item) => {
+                    const width = +item.width;
+                    return (
+                        <Col key={item.id} xs={width} >
+                            <Leaf item={item} />
+                        </Col>
+                    )
+                })}
+            </>
         )
-    }
+}
+export const Panel = () => {
+
+    return (
+        <Grid fluid> 
+                <Tree children={structure.children} /> 
+        </Grid>
+    )
 }

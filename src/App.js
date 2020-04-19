@@ -1,18 +1,14 @@
 import React from 'react';
-import { Panel } from './Panel';
-import logo from './logo.svg';
+import { Panel } from './Panel'; 
 import './App.css';
+import 'react-flexbox-grid/dist/react-flexbox-grid.css';
+import 'react-grid-layout/css/styles.css';
+import 'react-resizable/css/styles.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <Panel />
-      </header>
+    <div className="App">  
+        <Panel /> 
     </div>
   );
 }

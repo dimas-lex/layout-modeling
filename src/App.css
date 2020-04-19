@@ -1,18 +1,9 @@
 .App {
   text-align: center;
+  width: 100%;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
+ 
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -24,6 +15,24 @@
   color: white;
 }
  
-.box {
-  border: 1px solid red;
+div {
+  border: 1px solid red; 
+  padding: 3px;
+  box-sizing: border-box;
+}
+.row {
+  border: 1px solid blue;
+}
+.leaf-label {
+  display: block;
+  width: 100%;
+  height: 25px;
+  margin: 0;
+  padding: 3px 0;
+  box-sizing: border-box;
+}
+.leaf-input {
+  width: 100%; 
+  margin: 0; 
+  box-sizing: border-box;
 }

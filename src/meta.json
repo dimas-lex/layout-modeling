@@ -1,0 +1,63 @@
+{
+    "type": "panel",
+    "width": "12",
+    "children": [
+        {
+            "type": "panel",
+            "id": "111",
+            "title": "panle 1",
+            "width": "9",
+            "children": [
+                {
+                    "type": "panel",
+                    "id": "111_1",
+                    "title": "panle 111_1",
+                    "width": "9",
+                    "children": [
+                        {
+                            "type": "item",
+                            "id": "111_1_1",
+                            "width": "6",
+                            "title": "panle 111_1_1"
+                        },
+                        {
+                            "type": "item",
+                            "id": "111_1_2",
+                            "width": "6",
+                            "title": "panle 111_1_2"
+                        }
+                    ]
+                },
+                {
+                    "type": "panel",
+                    "id": "111_2",
+                    "width": "3",
+                    "title": "panle 111_2",
+                    "children": []
+                }
+            ]
+        },
+        {
+            "type": "panel",
+            "id": "222",
+            "width": "3",
+            "title": "panle 2",
+            "children": [
+                {
+                    "type": "panel",
+                    "id": "222_1",
+                    "title": "panle 222_1",
+                    "width": "9",
+                    "children": []
+                },
+                {
+                    "type": "panel",
+                    "id": "222_2",
+                    "width": "3",
+                    "title": "panle 222_2",
+                    "children": []
+                }
+            ]
+        }
+    ]
+}
